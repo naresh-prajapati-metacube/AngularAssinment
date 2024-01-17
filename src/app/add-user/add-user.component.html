@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-2 col-8">
+            <p class="h2 text-center">Add User</p>
+            <app-user-error 
+                *ngIf="this.formSubmited && this.addform.invalid"
+                [Error_Field]="Error_Field"
+                [Error_Message]="Error_Message"
+                [Hint]="Hint"
+                (closeEvent)="this.formSubmited=!this.formSubmited"
+            ></app-user-error>
+            <form [formGroup]="addform" (ngSubmit)="addUser()">
+                <div class="mb-3">
+                    <label for="exampleInputFirstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="exampleInputFirstName" formControlName="First_Name" name="First_Name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputLastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="exampleInputLastName" formControlName="Last_Name" name="Last_Name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" formControlName="Email" name="Email">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="IsActive" name="IsActive">
+                    <label class="form-check-label" for="exampleCheck1">Is Active</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </form>
+        </div>
+    </div>
+</div>

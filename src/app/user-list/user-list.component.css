@@ -1,0 +1,22 @@
+.outer-section {
+    width: fit-content;
+}
+
+.left-section {
+    float: left;
+    background: beige;
+    padding: 10px;
+    min-width: 366px;
+}
+
+.right-section {
+    float: right;
+    background: beige;
+    padding: 10px;
+    min-width: 290px;
+}
+
+input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+}

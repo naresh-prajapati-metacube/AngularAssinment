@@ -1,0 +1,31 @@
+<div class="container" *ngIf="selectedUser.First_Name!=''">
+    <div class="row">
+        <div class="offset-2 col-8">
+            <p class="h2 text-center">User Detail</p>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <td>{{selectedUser.id}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <td>{{selectedUser.First_Name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Last Name</th>
+                        <td>{{selectedUser.Last_Name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <td>{{selectedUser.Email}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Is Active</th>
+                        <td>{{(selectedUser.IsActive)?'Yes':'No'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

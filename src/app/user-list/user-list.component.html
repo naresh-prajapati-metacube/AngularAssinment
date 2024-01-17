@@ -1,0 +1,67 @@
+    <p class="h2 m-2">Add User</p>
+
+    <form [formGroup]="addform" (ngSubmit)="addUser()">
+        <div style="display: flex; margin: 4px;">
+            <div style="margin:2px; width: 10%;">
+                <b>First Name:</b>
+            </div>
+            <div width="70%">
+                    <input formControlName="First_Name" name="First_Name" style="padding: 8px;border-radius: 7px;border: 1px solid #dbd5d5;" type="text">
+            </div>
+        </div>
+        <div style="display: flex; margin: 4px;">
+            <div style="margin:2px; width: 10%;">
+                <b>Last Name:</b>
+            </div>
+            <div width="70%">
+                    <input formControlName="Last_Name" name="Last_Name" style="padding: 8px;border-radius: 7px;border: 1px solid #dbd5d5;" type="text">
+            </div>
+        </div>
+        <div style="display: flex; margin: 4px;">
+            <div style="margin:2px; width: 10%;">        
+                <b>Email:</b>
+            </div>
+            <div width="70%">
+                    <input formControlName="Email" name="Email" style="padding: 8px;border-radius: 7px;border: 1px solid #dbd5d5;" type="email">
+            </div>
+        </div>
+        <div style="display: flex; margin: 4px;">
+            <div style="margin:2px; width: 10%;">
+                <b>Is Active:</b>
+            </div>
+            <div width="70%">
+                    <input formControlName="IsActive" name="IsActive" style="padding: 8px;border-radius: 7px;border: 1px solid #dbd5d5;" type="checkbox">
+            </div>
+        </div>
+        <button type="submit" style="background-color: #1380dd;font-weight: 600;padding: 8px;font-size: 14px; border: 1px solid #dbd5d500;color: #fff0f5;">Add User</button>
+    </form>
+
+    <div class="outer-section">
+
+        <p class="h2 m-2">User List</p>
+    
+    <div class="left-section">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let user of userList">
+                <td>{{user.First_Name}}</td>
+                <td>{{user.Email}}</td>
+                <td>
+                    <button class="btn btn-success" type="button" (click)="showMe(user.id)">Show Me</button>
+                    <button class="btn btn-danger" type="button" (click)="deleteUser(user.id)">Delete User</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right-section" *ngIf="selectedUser.First_Name!=''">
+        <p>First Name: {{selectedUser.First_Name}}</p>
+        <p>Last Name: {{selectedUser.Last_Name}}</p>
+        <p>Email: {{selectedUser.Email}}</p>
+        <p>Active: {{selectedUser.IsActive}}</p>
+    </div>
+    <div style="clear: both;"></div>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="Error_Message!=''" class="alert alert-danger alert-dismissible" role="alert">
+    <h4 class="alert-heading">{{Error_Field}} error!</h4>
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <p class="mb-0"><i> {{Error_Message}}</i></p>
+        </div>
+        <div class="col-6 text-end">
+            <p class="mb-0"><b>Hint:</b><i> "{{Hint}}"</i></p>
+        </div>
+    </div>
+    <button type="button" class="btn-close" (click)="closeError()"></button>
+</div>
